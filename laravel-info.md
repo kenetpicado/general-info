@@ -77,3 +77,7 @@ php artisan key:generate
 ```shell
 php artisa optimize:clear
 ```
+- Limpiar cache, (Error de archivos antiguos eliminados)
+```shell
+php artisan config:cache &&  php artisan config:clear &&  composer dump-autoload -o
+```
