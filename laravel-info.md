@@ -1,6 +1,6 @@
 # Laravel
-## Comandos generales
-- Instalar composer
+### Comandos generales
+- Instalar con composer
 ```shell
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php -r "if (hash_file('sha384', 'composer-setup.php') === '906a84df04cea2aa72f40b5f787e49f22d4c2f19492ac310e8cba5b96ac8b64115ac402c8cd292b8a03482574915d1a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
@@ -35,20 +35,20 @@ php artisan serve
 ```shell
 php artisan make:Controller AlumnoController
 ```
-## Bases de datos
+### Bases de datos
 ```shell
 php artisan make:migration create_alumnos_table
 php artisan migrate
 php artisan migrate:rollback
 php artisan migrate:reset
 ```
-## Eloquent
+### Eloquent
 - Al crear un modelo la opción "-a" se crean además todos los archivos con base al mismo modelo (Controlador, Migración, Request, etc.)
 ```shell
 php artisan make:model Alumno -a
 ```
 
-## Instalar Bootstrap
+### Instalar Bootstrap
 - Instalar parquete Laravel ui
 ```shell
 composer require laravel/ui

@@ -1,6 +1,6 @@
 # Información general / Configuraciones varias
 
-## Configuración inicial de Debian 11
+### Configuración inicial de Debian 11
 
 - Repositorios
 
@@ -129,33 +129,17 @@ sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport 587 -j ACCEPT
 sudo netfilter-persistent save
 ```
 
-### Archivo config.inc.php para phpmyadmin
+### Configuracion para MySQL
+- Modificar contraseña
 ```shell
-<?php
-
-declare(strict_types=1);
-
-/**
- * This is needed for cookie based authentication to encrypt password in
- * cookie. Needs to be 32 chars long.
- */
-$cfg['blowfish_secret'] = 'abcdefghijklmnopqrstuvwxyzabcdef'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
-
-/* Servers configuration */
-$i = 0;
-
-/* First server */
-$i++;
-/* Authentication type */
-$cfg['Servers'][$i]['auth_type'] = 'cookie';
-/* Server parameters */
-$cfg['Servers'][$i]['host'] = 'localhost';
-$cfg['Servers'][$i]['compress'] = false;
-$cfg['Servers'][$i]['AllowNoPassword'] = false;
-
-/* Directories for saving/loading files from server */
-$cfg['UploadDir'] = '';
-$cfg['SaveDir'] = '';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'yournewpassword';
 ```
 
+Ejecutar sudo mysql_secure_installation para reliazar las configuraciones necesarias en un ambiente de producción.
+
+- Crear nuevo usuario y asignarle todos los permisos sobre una base de datos.
+```shell
+CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'localhost';
+```
 
