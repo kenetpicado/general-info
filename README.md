@@ -1,30 +1,5 @@
 # Información general / Configuraciones varias
 
-### Configuración inicial de Debian 11
-
-- Repositorios
-
-```shell
-deb http://deb.debian.org/debian/ bullseye main contrib non-free
-deb-src http://deb.debian.org/debian/ bullseye main contrib non-free
-
-deb http://security.debian.org/debian-security bullseye-security main contrib non-free
-deb-src http://security.debian.org/debian-security bullseye-security main contrib non-free
-
-deb http://deb.debian.org/debian/ bullseye-updates main contrib non-free
-deb-src http://deb.debian.org/debian/ bullseye-updates main contrib non-free
-```
-- Paquetes básicos
-```shell
-apt-get install linux-headers-$(uname -r|sed 's/[^-]*-[^-]*-//') build-essential make automake cmake autoconf git aptitude synaptic curl qapt-deb-installer
-```
-- Añadir al archivo .bashrc
-```shell
-export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
-```
-- Usuario root en terminal de Debian: su -
-- Añadir al grupo sudoers en el archivo /etc/sudoers
-
 ### Instalar tipografias
 - Libres
 ```shell
@@ -56,37 +31,6 @@ sudo apt install php7.4-common php7.4-mysql php7.4-xml php7.4-xmlrpc php7.4-curl
 xrandr --newmode "1280x720_60.00"  74.48  1280 1336 1472 1664  720 721 724 746  -HSync +Vsyncc
 xrandr --addmode VGA-1 1280x720_60.00
 xrandr --output VGA-1 --mode 1280x720_60.00 
-```
-### Configurar SSH GitHub
-- Generar llaves dentro de ~/.ssh
-```shell
-ssh-keygen -t ed25519 -C "example@gmail.com"
-```
-- Crear el archivo config en ~/.ssh
-```shell
-Host github.com
-  HostName github.com
-  User *
-  IdentityFile ~/.ssh/key
-  IdentitiesOnly yes
-```
-- Añadir contendio de la llave .pub a GitHub
-- Comprobar conexion
-```shell
-ssh -T git@github.com
-```
-### Cambiar el origin Git
-- SSH
-```shell
-git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
-```
-- HTTPS
-```shell
-git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
-```
-- Ver origin
-```shell
-git remote -v
 ```
 
 ### Instalar Nodejs
@@ -128,18 +72,3 @@ sass --watch origin.scss style.css
 sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport 587 -j ACCEPT
 sudo netfilter-persistent save
 ```
-
-### Configuracion para MySQL
-- Modificar contraseña
-```shell
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'yournewpassword';
-```
-
-Ejecutar sudo mysql_secure_installation para reliazar las configuraciones necesarias en un ambiente de producción.
-
-- Crear nuevo usuario y asignarle todos los permisos sobre una base de datos.
-```shell
-CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'localhost';
-```
-
