@@ -29,3 +29,7 @@ git remote set-url origin https://github.com/USERNAME/REPOSITORY.git
 ```shell
 git remote -v
 ```
+### Eliminar todas las ramas excepto master
+```shell
+git branch | grep -v "master" | xargs git branch -D
+```
