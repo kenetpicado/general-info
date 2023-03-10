@@ -23,7 +23,7 @@ Alias /phpmyadmin /var/www/phpmyadmin
 ```
 ### Laravel + API
 ```shell
-<VirtualHost \*:80>
+<VirtualHost *:80>
     ServerAdmin webmaster@localhost
     ServerName www.laravel.test
     ServerAlias laravel.test
@@ -46,13 +46,13 @@ Alias /phpmyadmin /var/www/phpmyadmin
 
 ### Solo Laravel
 ```shell
-<VirtualHost \*:80>
+<VirtualHost *:80>
     ServerAdmin webmaster@localhost
     ServerName www.laravel.test
     ServerAlias laravel.test
-    DocumentRoot /var/www/laravel/public
+    DocumentRoot /var/www/laravel/public/
 
-    <Directory /var/www/laravel/public>
+    <Directory /var/www/laravel/public/>
         Options +FollowSymLinks
         RewriteEngine On
         RewriteCond %{REQUEST_FILENAME} !-d
