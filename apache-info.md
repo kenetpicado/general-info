@@ -29,10 +29,10 @@ Alias /phpmyadmin /var/www/phpmyadmin
 ### Laravel Project
 ```shell
 <VirtualHost *:80>
-    DocumentRoot "/home/kenet/Documentos/GitHub/healthier/public"
+    DocumentRoot "/var/www/site"
     ServerName v1healthier.test
     ServerAlias *.v1healthier.test
-    <Directory "/home/kenet/Documentos/GitHub/healthier/public">
+    <Directory "/var/www/site">
         AllowOverride All
         Require all granted
     </Directory>
