@@ -21,43 +21,16 @@ Alias /phpmyadmin /var/www/phpmyadmin
     Require all denied
 </Directory>
 ```
-### Laravel + API
+
+### Laravel Project
 ```shell
 <VirtualHost *:80>
-    ServerAdmin webmaster@localhost
-    ServerName www.laravel.test
-    ServerAlias laravel.test
-    DocumentRoot /var/www/laravel/public
-
-    <Directory /var/www/laravel/public>
-        Options Indexes FollowSymLinks MultiViews
+    DocumentRoot "/home/kenet/Documentos/GitHub/healthier/public"
+    ServerName v1healthier.test
+    ServerAlias *.v1healthier.test
+    <Directory "/home/kenet/Documentos/GitHub/healthier/public">
         AllowOverride All
-        Order allow,deny
-        allow from all
         Require all granted
-        Options +FollowSymLinks
-        RewriteEngine On
-        RewriteCond %{REQUEST_FILENAME} !-d
-        RewriteCond %{REQUEST_FILENAME} !-f
-        RewriteRule ^ index.php [L]
-    </Directory>
-</VirtualHost>
-```
-
-### Solo Laravel
-```shell
-<VirtualHost *:80>
-    ServerAdmin webmaster@localhost
-    ServerName www.laravel.test
-    ServerAlias laravel.test
-    DocumentRoot /var/www/laravel/public/
-
-    <Directory /var/www/laravel/public/>
-        Options +FollowSymLinks
-        RewriteEngine On
-        RewriteCond %{REQUEST_FILENAME} !-d
-        RewriteCond %{REQUEST_FILENAME} !-f
-        RewriteRule ^ index.php [L]
     </Directory>
 </VirtualHost>
 ```
