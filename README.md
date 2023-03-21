@@ -29,13 +29,7 @@ sudo apt install php7.4-common php7.4-mysql php7.4-xml php7.4-xmlrpc php7.4-curl
 
 - Cambiar entre diferentes versiones
 ```shell
-update-alternatives --config php 
-```
-### Añadir resolución para monitor externo
-```shell
-xrandr --newmode "1280x720_60.00"  74.48  1280 1336 1472 1664  720 721 724 746  -HSync +Vsyncc
-xrandr --addmode VGA-1 1280x720_60.00
-xrandr --output VGA-1 --mode 1280x720_60.00 
+sudo update-alternatives --config php 
 ```
 
 ### Instalar Nodejs
