@@ -1,6 +1,10 @@
-# Apache
+# Apache - Archivos de configuración de Apache para hosts virtuales
 
-## Archivos de configuración de Apache para hosts virtuales
+### Enable php version
+```shell
+sudo a2dismod php5
+sudo a2enmod php7.0
+```
 
 ### phpmyadmin.conf
 
