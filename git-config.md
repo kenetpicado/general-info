@@ -11,7 +11,7 @@ Host github.com
   IdentityFile ~/.ssh/key
   IdentitiesOnly yes
 ```
-Añadir contendio de la llave .pub a GitHub
+- Añadir contendio de la llave .pub a GitHub
 - Comprobar conexion
 ```shell
 ssh -T git@github.com
